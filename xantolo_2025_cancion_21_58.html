@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Xantolo 2025 · Alebrijes · Desbloqueo 29/10/2025 21:58</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;600;800&family=Courgette&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#14051a;--bg2:#210b2e;--bone:#f5f2e9}
+body{margin:0;min-height:100vh;color:var(--bone);background:linear-gradient(180deg,var(--bg1),var(--bg2));font-family:'Montserrat'}
+header{text-align:center;padding-top:140px;color:var(--bone)}
+.title{font-family:'Cinzel Decorative';font-size:clamp(28px,5vw,56px)}
+.subtitle{font-family:'Courgette';font-size:clamp(16px,3vw,26px)}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:760px;margin:20px auto}
+.unit{text-align:center;border:1px solid rgba(255,255,255,.2);border-radius:15px;padding:15px;background:rgba(255,255,255,.08)}
+.num{font-size:clamp(26px,5vw,60px);font-weight:800}
+.content{display:none;max-width:980px;margin:22px auto;padding:20px}
+.panel{background:rgba(255,255,255,.1);padding:25px;border-radius:20px}
+pre{white-space:pre-wrap;font-family:"Courgette";font-size:18px;line-height:1.6}
+footer{text-align:center;color:rgba(255,255,255,.7);padding:20px}
+</style>
+</head>
+<body>
+<header>
+<h1 class="title">Xantolo 2025 · Alebrijes</h1>
+<p class="subtitle">La página se abrirá al latir de las <strong>09:58 p. m.</strong> — <strong>29 de octubre de 2025</strong></p>
+</header>
+
+<section id="lock" style="max-width:900px;margin:auto;padding:20px;text-align:center;color:white">
+<h2>Cuenta regresiva</h2>
+<p>Objetivo: 29/10/2025 · 21:58 · CDMX</p>
+<div class="countdown">
+<div class="unit"><div class="num" id="d">—</div><div>Días</div></div>
+<div class="unit"><div class="num" id="h">—</div><div>Horas</div></div>
+<div class="unit"><div class="num" id="m">—</div><div>Min</div></div>
+<div class="unit"><div class="num" id="s">—</div><div>Seg</div></div>
+</div>
+</section>
+
+<section id="content" class="content">
+<div class="panel">
+<h2>"El latido de mi corazón" — Letra</h2>
+<pre id="lyrics"></pre>
+</div>
+</section>
+
+<footer><small>Zona: <span id="tzname"></span></small></footer>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+$('tzname').textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const d=$('d'),h=$('h'),m=$('m'),s=$('s');
+const lock=$('lock'),content=$('content');
+const target=new Date('2025-10-29T21:58:00-06:00');
+function update(){
+const now=new Date();let diff=target-now;
+if(diff<=0){
+$('lyrics').textContent=`Dirás que es raro
+Lo que me pasó
+Parece que anoche
+Te encontré en mis sueños
+Las palabras que dije
+Se volvieron canción
+Versos que tuyos son
+Y el recuerdo nos dio
+Una melodía bella
+Que el alma tocó
+Con el ritmo que vibra
+En nuestro interior
+Amor verdadero nos une por siempre
+En el latido de mi corazón
+Amor verdadero nos une por siempre
+En el latido de mi corazón
+Ay, mi familia
+Oiga mi gente
+Canten a coro nuestra canción
+Amor verdadero, nos une por siempre
+En el latido de mi corazón
+Ay, mi familia
+Oiga mi gente
+Canten a coro nuestra canción
+Amor verdadero nos une por siempre
+En el latido de mi corazón`;
+lock.style.display='none';content.style.display='block';clearInterval(tick);return}
+const sec=Math.floor(diff/1000);
+d.textContent=Math.floor(sec/86400);
+h.textContent=String(Math.floor((sec%86400)/3600)).padStart(2,'0');
+m.textContent=String(Math.floor((sec%3600)/60)).padStart(2,'0');
+s.textContent=String(sec%60).padStart(2,'0');}
+const tick=setInterval(update,1000);update();
+})();
+</script>
+</body>
+</html>
